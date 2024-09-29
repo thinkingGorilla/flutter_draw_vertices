@@ -6,4 +6,6 @@ This method is how people (including Filip) can even implement specialized 3D re
 In this talk, Filip will explain the API of Canvas.drawVertices() and the Vertices.raw() constructor — both are obscure, very low-level, and hard to explain in documentation alone. 
 But they are worth it when you need to squeeze the last bit of performance out of Flutter.
 
+![flutter_draw_vertices_demo.gif](flutter_draw_vertices_demo.gif)
+
 See more → [Canvas.drawVertices — Incredibly fast, incredibly low-level, incredibly fun](https://www.youtube.com/watch?v=pD38Yyz7N2E)
