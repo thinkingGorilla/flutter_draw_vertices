@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_draw_vertices/canvas_draw_painter.dart';
+import 'package:flutter_draw_vertices/vertices_draw_painter.dart';
 import 'package:flutter_draw_vertices/widget_painter.dart';
 
 class SimulatorScreen extends StatefulWidget {
@@ -60,7 +61,8 @@ class _SimulatorScreenState extends State<SimulatorScreen> with SingleTickerProv
                         painter: switch (_currentMode) {
                           ShowMode.canvas =>
                             CanvasDrawPainter(count: _count, size: size, animation: _animationController),
-                          ShowMode.drawVertices => throw UnimplementedError(),
+                          ShowMode.drawVertices =>
+                            VerticesDrawPainter(count: _count, size: size, animation: _animationController),
                           ShowMode.drawVerticesRaw => throw UnimplementedError(),
                           _ => throw ArgumentError(),
                         },
