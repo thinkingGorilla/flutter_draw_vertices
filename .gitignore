@@ -1,0 +1,72 @@
+# Flutter/Dart/Pub related
+.dart_tool/
+.packages
+.pub-cache/
+.flutter-plugins
+.flutter-plugins-dependencies
+.idea/
+.metadata
+*.lock
+*.log
+
+# Build outputs
+build/
+**/build/
+*.hive
+
+# iOS related
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/*.xcodeproj/
+ios/Pods/
+ios/Runner.xcworkspace/
+ios/DerivedData/
+ios/.symlinks/
+ios/.generated/
+Flutter.podspec
+
+# Xcode
+*.xcworkspace
+*.xcuserstate
+*.xcuserdatad/
+*.lock
+.DS_Store
+
+# Android related
+**/android/app/debug/
+**/android/app/profile/
+**/android/app/release/
+android/.gradle/
+android/app/*.keystore
+android/app/google-services.json
+android/key.properties
+android/local.properties
+
+# Firebase related
+**/firebase_app_id_file.json
+
+# Windows related
+windows/flutter/
+windows/CMakeLists.txt
+windows/runner/
+windows/.dart_tool/
+windows/.packages
+windows/ephemeral/
+windows/FlutterGeneratedPluginRegistrant.h
+windows/FlutterGeneratedPluginRegistrant.cpp
+windows/generated_plugin_registrant.cpp
+
+# Miscellaneous
+*.iml
+*.swp
+*.lock
+*.log
+*.tmp
+*.bak
+*.orig
+*.rej
+*.sublime-workspace
+
+# JetBrains IDEs
+.idea/
+*.iml
