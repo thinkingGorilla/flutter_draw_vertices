@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_draw_vertices/canvas_draw_painter.dart';
 import 'package:flutter_draw_vertices/vertices_draw_painter.dart';
+import 'package:flutter_draw_vertices/vertices_raw_draw_painter.dart';
 import 'package:flutter_draw_vertices/widget_painter.dart';
 
 class SimulatorScreen extends StatefulWidget {
@@ -32,7 +33,7 @@ class _SimulatorScreenState extends State<SimulatorScreen> with SingleTickerProv
       );
     _countBySlide = Tween<double>(
       begin: 1,
-      end: pow(2, 15).toDouble(),
+      end: pow(2, 17).toDouble(),
     ).chain(CurveTween(curve: Curves.easeInCirc));
 
     _count = _calculateCount(_slide.value);
@@ -63,7 +64,8 @@ class _SimulatorScreenState extends State<SimulatorScreen> with SingleTickerProv
                             CanvasDrawPainter(count: _count, size: size, animation: _animationController),
                           ShowMode.drawVertices =>
                             VerticesDrawPainter(count: _count, size: size, animation: _animationController),
-                          ShowMode.drawVerticesRaw => throw UnimplementedError(),
+                          ShowMode.drawVerticesRaw =>
+                            VerticesRawDrawPainter(count: _count, size: size, animation: _animationController),
                           _ => throw ArgumentError(),
                         },
                         size: size,
@@ -77,9 +79,11 @@ class _SimulatorScreenState extends State<SimulatorScreen> with SingleTickerProv
               alignment: WrapAlignment.center,
               crossAxisAlignment: WrapCrossAlignment.center,
               children: [
-                ModeSwitcher(onChanged: (value) {
-                  super.setState(() => _currentMode = value);
-                }),
+                ModeSwitcher(
+                  onChanged: (value) {
+                    super.setState(() => _currentMode = value);
+                  },
+                ),
                 SizedBox(
                   width: 250,
                   child: ValueListenableBuilder(
